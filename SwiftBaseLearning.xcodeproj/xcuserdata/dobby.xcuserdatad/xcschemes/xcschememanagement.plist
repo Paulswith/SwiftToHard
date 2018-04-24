@@ -12,17 +12,22 @@
 		<key>L2-DataType.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>L3-Operators.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>L4-StringOperation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
+		</dict>
+		<key>L5-LogicBranch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>SwiftBaseLearning.xcscheme</key>
 		<dict>
