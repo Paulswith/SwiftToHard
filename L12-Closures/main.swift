@@ -84,9 +84,7 @@ let retFunc2 = increater(100)
 print(retFunc2())
 
 
-
 /* Autoclosure */
-
 var customersInLine = ["Ewa", "Barry", "Daniella"]
 //func serve(customer customerProvider:() -> String) {
 //    print("Using \(customerProvider())")

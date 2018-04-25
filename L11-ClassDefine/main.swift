@@ -8,36 +8,85 @@
 
 import Foundation
 
+/*
+ static 全局,  必须在定义的时候赋值
+ */
+
 class TiniObject: NSObject {
     // 属性定义
-    var age:Int = 0
-    var name:String?
-    var chineseScore:Double = 0.0
-    var mathScore:Double = 0.0
-    
-    
-    var calAge:Double {
-        get {
-            return chineseScore/mathScore
+     var calAge:Double! {  // 非明确类型在下方调用的时候需要解包, 因为没有初始化值
+        // willSet 方法
+        willSet {
+            print("will set \(newValue)")
         }
-        set {
-            self.calAge = newValue   // 这个是临时存储的值, 系统指派
+        // didSet 方法
+        didSet {
+            print("seted value \(calAge)")
+        }
+    }
+    var calWeight:Double! {
+        // 设置只读属性
+        get {
+            return 998.22
         }
     }
     
-    func firstFunc() {
+    public func firstFunc() {
         print("first-func: \(self.calAge)")
     }
 }
 
 
 let tini:TiniObject = TiniObject()
-//tini.age = 19
-//tini.name = "yaoming"
-tini.chineseScore = 20000.22
-tini.mathScore = 123.23
 tini.calAge = 288
+print(tini.calWeight)
 tini.firstFunc()
-//tini.firstFunc()
+
+
+
+// struct 结构体和 enum 枚举 . 配合static使用
+struct Direction {
+    static let E = "east"
+    static let W = "west"
+}
+
+enum Dire {
+    case West
+    case East
+}
+
+enum DireC {
+    static let N = "Norse"
+    static let S = "Source"
+}
+
+// 结构体玩法, 通过一个点在改变其他点
+struct NameInfo {
+    static var age = 18
+    static var weight = 73
+    var currentName:String = "joh" {
+        willSet {
+            if NameInfo.age > 10 {
+                NameInfo.age = 20
+            }
+        }
+        didSet {
+            guard NameInfo.weight > 75 else {
+                NameInfo.weight = 100
+                print("nameInfo = \(NameInfo.age) && \(NameInfo.weight)")
+                return
+            }
+        }
+    }
+}
+
+var info = NameInfo()
+info.currentName = "make"
+
+
+
+
+
+
 
 
