@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>L12-Closures.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>L2-DataType.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
